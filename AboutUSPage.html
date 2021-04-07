@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript">
+
+
+    function VisionText(){
+      document.getElementById("PAdded").innerHTML="We aspire to be more than just a recycling business. Our goals encompasses hard work, comitment, and devotion through out our work. We aim to invest in the society's well being."
+    }
+    function ReturnToText(){
+      document.getElementById("PAdded").innerHTML=""
+    }
+
+    function MissionText(){
+      document.getElementById("PAdded").innerHTML="Our purpose is to protect our environment, reduce pollution, and diminish solid waste products in our households. By recycling, we will make people feel that they are contributing in making their society greener and more developed."
+    }
+    function ServicesText(){
+      document.getElementById("PAdded").innerHTML="We accept all types of packages that can be recycled.<br>We have different drop off addresses, and pick up service<br>Recycling with EcoClan is not just for gifts and getting rid of trash, it is also about saving our planet."
+    }
+
+    function ReceiveFromPages(){
+      var MyName = localStorage.getItem("ToProfile");
+      document.getElementById("NameUser").innerHTML=MyName;
+    }
+
+    window.onload=ReceiveFromPages;
+
+    </script>
+  </head>
+
+
+  <body>
+    <div class ="greenBorder solid" style="background-color:black; height:50px;">
+
+      <ul class="toolul removeDots">
+        <li class="imageli fontfamily"><a id="NameUser" class="toolA" href="Profile.html" onclick="RedeemName()"> </a></li>
+      <ul class="toolul">
+        <li class="toolli fontfamily"><a class="toolA" href="#ContactPart">Contact Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="3" style="background-color:grey">About Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="signIn.html">Home</a></li>
+      </ul></ul>
+
+     </div>
+
+     <div class="aboutUsDiv solid" style="background-image:url(Image/aboutUs.jpg);" align=center>
+       <img src="Image/aboutUs.jpg" alt="About Us" width="1500px" height="500px;">
+
+     </div>
+
+
+     <div class="divAboutUsTitle">
+       <span style="margin-left:30px" class="BannerText">About Us</span>
+
+     </div>
+
+     <div class="divAboutUsContent" align=center>
+       <table  style="margin-top: 60px;" border="0">
+        <tr>
+          <td class="tableContent" align=center><img id="VisionImg" class="onPointImage" onmouseover="VisionText()" onmouseout="ReturnToText()" src="Image/vision.jpg" alt="My Picture" width="300px" height="230px"></td>
+            <td class="tableContent" align=center><img id="MissionImg" class="onPointImage" onmouseover="MissionText()" onmouseout="ReturnToText()" src="Image/mission.jpg" alt="My Picture" width="300px" height="230px"></td>
+              <td class="tableContent" align=center><img id="servicesImg" class="onPointImage" onmouseover="ServicesText()" onmouseout="ReturnToText()" src="Image/services.jpg" alt="My Picture" width="300px" height="230px"></td>
+        </tr>
+
+        <tr>
+          <td colspan="3" align=center>
+
+            <div class="AboutUsBox">
+              <p id="POriginal" class="textInsideBox"> Learn More About Us </p>
+              <p id="PAdded" class="Mytext"> </p>
+
+            </div>
+          </td>
+        </tr>
+
+
+
+       </table>
+
+     </div>
+
+     <hr style="border:solid">
+
+     <div style="height:700px; " align=center>
+
+
+     <div class=" PicContainer" align="center" style="overflow:auto; float:left ;height:500px; width:400px; overflow:auto; margin-left:400px;">
+       <img src="Image/MyPic.jpeg" alt="Reem" width = 400px height=490px>
+       <div class = "AboutMe">
+         <strong class="Name" style = "text-align:left">Reem Al Bostami</strong><br><br><br><br>
+         <span class="MyText">Software Developer and a Video Editor with vast knowledge in different programming languages, design, and video editing platforms. A dedicated
+hardworking individual seeking to increase my
+knowledge and gain more experience in
+developing games, websites, and mobile
+applications, designing, and editing media
+content.</span><br>
+
+       </div>
+     </div>
+
+         
+
+
+</div>
+
+
+<div style="background-color:black; height:350px; width:100%">
+
+
+  <div id="SocialMedia" style="float:left;background-color:black;height:350px;width:500px;overflow:auto;">
+
+    <table style="height:250px; margin:20px 20px">
+
+      <tr>
+        <th class="FootContact" colspan="2" style="color:white">Our Social Media</th>
+      </tr>
+
+      <tr>
+            <td  align = "center"> <img src = "Image/instagram.png" width= "50px" height="50px"> </td>
+            <td align = "center"> <img src = "Image/facebook.png" width= "50px" height="50px"> </td>
+          </tr>
+
+            <tr>
+              <td align = "center"> <img src = "Image/twitter.png" width= "50" height="50"> </td>
+              <td align = "center"> <img src = "Image/youtube.png" width= "50" height="50"> </td>
+            </tr>
+
+    </table>
+
+  </div>
+
+  <div style="float:right;background-color:black;height:350px;width:500px;overflow:auto;">
+
+    <p class="FootContact">Learn More...</p>
+
+    <ul class="footerText removeDots" style="color:white;margin-right:20px">
+                  <li>Who are we?</li>
+                  <p align= center >EcoClan is an initiative to help ease the process of recycling for people.
+                    All they have to do is divide the wastes and then contact us for pickup. </p>
+
+                    <li>Our Privacy Policy:</li>
+                    <p align=center style="color:white"> Our privacy policy contains how your data is used and how it is protected, when our services are used.</p>
+
+                </ul>
+
+  </div>
+
+  <div style="float:center;background-color:black;height:350px;width:500px;overflow:auto;" id="ContactPart">
+
+    <p class="FootContact">Contact Us</p>
+
+    <ul class="footerText removeDots" style="color:white">
+              <li> Email:<a class="aNodec" href="mailTo:EcoClan_support@gmail.com"> EcoClan_support@gmail.com </a></li>
+              <br>
+              <li >Phone Number:
+                <ul>
+                <li><a class="aNodec" href="tel:0563199274">+971-56-3199274</a></li>
+                <li><a class="aNodec" href="tel:0503266204">+971-50-3266204</a></li>
+                </ul> </li>
+                <br>
+              <li > Address:
+                <ul>
+                  <li >Abu Dhabi, Electra Street, Tourist Club, Facing AD Mall</li>
+                  <li >Abu Dhabi, Khalifa Street, Near FAB Main Branch </li>
+                  <li >Abu Dhabi, Khalidiya, Facing AlKhalidiya Garden</li>
+                </ul>
+              </li>
+
+    </ul>
+
+  </div>
+
+
+</div>
+
+  </body>
+</html>

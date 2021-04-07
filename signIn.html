@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Home Page</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript">
+
+      function setRecyclingImage(){
+        document.getElementById("container").style="background-image:url(Image/recycling.jpg);"
+        document.getElementById("Paragraph").innerHTML=""
+        document.getElementById("Paragraph2").innerHTML="EcoClan displays simple steps for you to start recycling. <br> By specifying your package details and pickup or dropoff location you will be on the right path to start the recycling process"
+
+      }
+
+      function setExploreImage(){
+        document.getElementById("container").style="background-image:url(Image/handingGifts2.jpg);"
+        document.getElementById("Paragraph").innerHTML=""
+        document.getElementById("Paragraph2").innerHTML="EcoClan offers a number of gifts for loyal and consistent users."
+      }
+
+      function setHowImage(){
+        document.getElementById("container").style="background-image:url(Image/giftbg.jpg);"
+        document.getElementById("Paragraph").innerHTML=""
+        document.getElementById("Paragraph2").innerHTML="For every one kilogram, one point is added to your account. The minimum number of points required to start receiving gifts is 10 points. Some of the gifts can be customized based on your preferences"
+      }
+
+
+      function returnDefault(){
+        document.getElementById("container").style="background-image:url(Image/leaf.jpg);"
+        document.getElementById("Paragraph").innerHTML="Explore Your Options With EcoClan"
+        document.getElementById("Paragraph2").innerHTML=""
+      }
+
+      function ReceiveName(){
+        var MyName = localStorage.getItem("UserName");
+        document.getElementById("NameUser").innerHTML=MyName;
+      }
+
+      window.onload=ReceiveName;
+
+
+      function RedeemName(){
+        var ProfileName = document.getElementById('NameUser').innerHTML;
+        var emptyStorage=0;
+        localStorage.setItem("ToProfile",emptyStorage);
+        localStorage.setItem("ToProfile", ProfileName);
+        window.location.href="Profile.html"
+        window.location.href="AboutUSPage.html"
+        window.location.href="Gifts.html"
+        window.location.href="Questions.html"
+
+      }
+
+    </script>
+
+  </head>
+
+
+
+  <body>
+
+    <div class ="greenBorder solid" style="background-color:black; height:50px;">
+
+      <ul class="toolul removeDots">
+        <li class="imageli fontfamily"><a id="NameUser" class="toolA" href="Profile.html" onclick="RedeemName()"> </a></li>
+
+
+      <ul class="toolul removeDots">
+        <li class="toolli fontfamily"><a class="toolA" href="#ContactPart">Contact Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="AboutUSPage.html" onclick="RedeemName()">About Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="#home" style="background-color:grey" onClick="changeHome()">Home</a></li>
+      </ul>    </ul>
+
+     </div>
+
+    <div id="container" class="solid divContainer" style="background-image:url(Image/leaf.jpg);">
+
+      <div id="withPara" class="emptyBox">
+        <p id="Paragraph" class="textInsideBox"> Explore Your Options With EcoClan </p>
+        <p id="Paragraph2" class="Mytext"> </p>
+      </div>
+
+    <br>
+
+      <a class="aNodec" href="Questions.html" onclick="RedeemName()"><button id="button1" onmouseover="setRecyclingImage()" onmouseout="returnDefault()" class="MyButtons" type="button" name="Start Recycling" style="margin-left:290px"><span class="textInsideBox">Start Recycling</span></button></a>
+      <a class="aNodec" href="Gifts.html" onclick="RedeemName()"><button id="button3" onmouseover="setHowImage()" onmouseout="returnDefault()" class="MyButtons" type="button" name="How To Redeem"><span class="textInsideBox">Explore Gifts</span></button>
+     </div>
+
+     <div style="background-color:black; height:350px; width:100%">
+
+
+       <div id="SocialMedia" style="float:left;background-color:black;height:350px;width:500px;overflow:auto;">
+
+         <table style="height:250px; margin:20px 20px">
+
+           <tr>
+             <th class="FootContact" colspan="2" style="color:white">Our Social Media</th>
+           </tr>
+
+           <tr>
+                 <td  align = "center"> <img src = "Image/instagram.png" width= "50px" height="50px"> </td>
+                 <td align = "center"> <img src = "Image/facebook.png" width= "50px" height="50px"> </td>
+               </tr>
+
+                 <tr>
+                   <td align = "center"> <img src = "Image/twitter.png" width= "50" height="50"> </td>
+                   <td align = "center"> <img src = "Image/youtube.png" width= "50" height="50"> </td>
+                 </tr>
+
+         </table>
+
+       </div>
+
+       <div style="float:right;background-color:black;height:350px;width:500px;overflow:auto;">
+
+         <p class="FootContact">Learn More...</p>
+
+         <ul class="footerText removeDots" style="color:white;margin-right:20px">
+                       <li>Who are we?</li>
+                       <p align= center >EcoClan is an initiative to help ease the process of recycling for people.
+                         All they have to do is divide the wastes and then contact us for pickup. </p>
+
+                         <li>Our Privacy Policy:</li>
+                         <p align=center style="color:white"> Our privacy policy contains how your data is used and how it is protected, when our services are used.</p>
+
+                     </ul>
+
+       </div>
+
+       <div style="float:center;background-color:black;height:350px;width:500px;overflow:auto;" id="ContactPart">
+
+         <p class="FootContact">Contact Us</p>
+
+         <ul class="footerText removeDots" style="color:white">
+                   <li> Email:<a class="aNodec" href="mailTo:EcoClan_support@gmail.com"> EcoClan_support@gmail.com </a></li>
+                   <br>
+                   <li >Phone Number:
+                     <ul>
+                     <li><a class="aNodec" href="tel:0563199274">+971-56-3199274</a></li>
+                     <li><a class="aNodec" href="tel:0503266204">+971-50-3266204</a></li>
+                     </ul> </li>
+                     <br>
+                   <li > Address:
+                     <ul>
+                       <li >Abu Dhabi, Electra Street, Tourist Club, Facing AD Mall</li>
+                       <li >Abu Dhabi, Khalifa Street, Near FAB Main Branch </li>
+                       <li >Abu Dhabi, Khalidiya, Facing AlKhalidiya Garden</li>
+                     </ul>
+                   </li>
+
+         </ul>
+
+       </div>
+
+
+     </div>
+
+
+  </body>
+</html>

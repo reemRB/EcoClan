@@ -1,0 +1,668 @@
+
+    div {
+      margin: auto;
+      width: 99.2%;
+      height: 60px;
+      border-width: 6px;
+
+    }
+
+
+    body{
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    .aNodec{
+      text-decoration: none;
+    }
+
+    .removeDots{
+      list-style-type: none;
+
+    }
+
+ .toolul{
+
+   margin:0;
+   padding:0;
+   overflow: hidden;
+   background-color:#000000;
+
+ }
+
+ .toolli{
+   float:right;
+ }
+ .imageli{
+   float: left;
+ }
+
+ .toolA{
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 17px 20px;
+   text-decoration: none;
+
+ }
+
+
+ .toolA:hover{
+   background-color:green;
+   cursor: pointer;
+ }
+
+.tdPadding{
+  padding: 15px 15px;
+
+}
+
+
+.fontfamily {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+
+.buttonLearn{
+
+  font-size: 25px;
+  cursor:pointer;
+  text-align: center;
+  outline: black;
+  color: white;
+  background-color: #4CAF50;
+  border-style: solid;
+  border-width: medium;
+  font-weight: bolder;
+  border-radius: 50px;
+  padding: 20px 20px;
+
+}
+.buttonLearn:hover{
+
+  background-color:green;
+  padding: 30px 30px;
+}
+
+
+.paragraphEco{
+  color:black;
+  font-family: 'Bebas Neue', sans-serif;
+  text-align: center;
+  font-size: 25px;
+
+}
+.pragaraphAround{
+  background-color: #d0f0c0;
+  opacity: 0.6;
+  border-radius: 50px;
+
+}
+
+.quoteCont{
+  position: relative;
+
+}
+
+.quoteOver{
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #d0f0c0;
+  overflow: hidden;
+  height: 0;
+  width: 450px;
+  transition:.7s;
+}
+
+.quoteCont:hover .quoteOver{
+  height:399px;
+}
+
+.quote{
+  font-weight: bold;
+  font-style: italic;
+  padding: 13px;
+  text-indent: 50px;
+  text-align: center;
+  font-size: 30px;
+
+}
+
+.quotation{
+  font-size: 70px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ecoIntroContainer{
+  background-color: #d0f0c0;
+  border-radius: 50px;
+}
+
+.ecoClanText{
+  color: black;
+  font-family: 'Calisto MT';
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  margin:20px 20px;
+
+
+}
+
+.ecoClanHeader{
+  color: black;
+  font-family: 'Calisto MT';
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.FootContact{
+  color:#454b4c;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color:white
+}
+
+.footerText{
+  font-size: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+
+}
+
+.emptyTextBox{
+
+  display:inline-block;
+  line-height: 40px;
+  width:400px;
+  height: 300px;
+  text-align: center;
+
+}
+
+.emptyBox{
+  opacity: 0.5;
+  background-color: black;
+  border-radius: 40px;
+  display:inline-block;
+  margin: 65px 60px;
+  margin-left: 200px;
+  width:500px;
+  height: 310px;
+  text-align: center;
+
+
+}
+
+.textInsideBox{
+  color: white;
+  opacity: 1;
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+
+
+}
+
+.Mytext{
+  color: white;
+  opacity: 2;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Calibri Light (Headings)';
+  font-style: normal;
+  font-weight: normal;
+  padding: 8px;
+
+
+
+}
+
+.MyButtons{
+  cursor:pointer;
+  text-align: center;
+  outline: white;
+  color: white;
+  opacity: 0.5;
+  border-style: solid;
+  border-width: thick;
+  font-weight: bolder;
+  background-color: black;
+  margin-left: 50px;
+  margin-top: 125px;
+  padding: 20px 20px;
+  width: 440px;
+
+}
+
+.MyButtons:hover{
+  background-color: grey;
+  padding: 21px 21px;
+}
+
+
+
+.divContainer{
+  background-position:center;
+  background-size: cover;
+  background-repeat:no-repeat;
+  height:800px;
+  overflow:auto;
+}
+
+.divBanner{
+  background-position:center;
+  background-size: cover;
+  background-repeat:no-repeat;
+  height:454px;
+  overflow:auto;
+}
+
+.divPackageTitle{
+  margin-top: 50px;
+  font-size: 45px;
+  font-family: 'Calisto MT';
+  font-weight: bolder;
+
+}
+
+
+.divTable{
+  width:465px;
+  height:365px;
+  margin:20px;
+}
+
+.weightText{
+
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Calibri Light (Headings)';
+  font-style: normal;
+  font-weight: bold;
+  color: black
+
+
+}
+.weightOption{
+
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Calibri Light (Headings)';
+  font-style: normal;
+  font-weight: normal;
+  color: black;
+}
+
+.headerText{
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Calibri Light (Headings)';
+  color: black;
+  padding: 20px 20px;
+}
+.solid {
+  border-style:solid;
+}
+.solidBorderWhite{
+  border-style: solid;
+  border-color: white;
+}
+
+.commonQuestionsDiv{
+
+    width:697px;
+    height:100px;
+    margin:20px;
+}
+
+.textSizeCommon{
+  font-size: 25px;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Calibri Light (Headings)';
+  color:black;
+}
+
+.overAllDiv{
+  width:1500px;
+  height:300px;
+
+
+}
+
+.buttonSubmit{
+  background-color: black;
+  border:bold;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  font-family: 'Calisto MT';
+  margin: 20px 20px;
+  height: 70px;
+  width:170px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.buttonSubmit:hover{
+
+  background-color:grey;
+  padding: 20px 20px;
+}
+
+.buttonQuestions{
+  background-color: black;
+  border:bold;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'Calisto MT';
+  margin: 20px 20px;
+  height: 60px;
+  width:170px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.buttonQuestions:hover{
+
+  background-color:grey;
+  padding: 15px 15px;
+}
+
+
+
+.FormContainer{
+  display: none;
+
+  width:1500px;
+  height:600px;
+  overflow: auto;
+  background-color:black;
+  padding: 10px 10px;
+  opacity: 0.9;
+
+}
+
+.InputContainer{
+  background-color: white;
+  width:700px;
+  height:550px;
+  opacity: 1;
+
+}
+
+.SignText{
+  font-size: 25px;
+  text-align: right;
+  font-weight: bold;
+  font-family: 'Calibri Light (Headings)';
+  color: black;
+  float: left;
+
+
+}
+
+.headForm{
+  font-size: 40px;
+  font-weight:bold;
+  font-family: 'Calisto MT';
+  padding-top:5px;
+  padding-left: 10px;
+
+}
+
+.inputSignUp{
+
+  opacity: 3;
+
+  font-size: 18px;
+  font-family: 'Calibri Light (Headings)';
+  width:300px;
+  background-color: white;
+  border-style: solid;
+
+}
+
+
+.closeButton{
+  position: absolute;
+  color:white;
+  font-size:50px;
+  font-family: 'Calisto MT';
+  font-weight:bold;
+  bottom:500px;
+  right:50px;
+  opacity: 1;
+}
+
+.closeButton:hover {
+  cursor: pointer;
+  color: green;
+
+}
+
+.SignCont{
+  display: none;
+  position: fixed;
+  width:670px;
+  height:420px;
+  align:center;
+  overflow: auto;
+  background-color:black;
+  opacity: 0.9;
+  padding: 10px 10px;
+
+}
+
+.SignInInput{
+  background-color: white;
+  width:600px;
+  height:250px;
+  margin:20px 20px;
+  opacity: 1;
+}
+
+.closeSignInButton{
+  position: absolute;
+  color:white;
+  font-size:40px;
+  font-family: 'Calisto MT';
+  font-weight:bold;
+  left:630px;
+  bottom: 350px;
+  opacity: 1;
+
+
+}
+
+.closeSignInButton:hover {
+  cursor: pointer;
+  color: green;
+
+}
+
+.aboutUsDiv{
+  height: 500px;
+
+}
+
+.divAboutUsTitle{
+  margin-top: 20px;
+  font-size: 50px;
+  font-family: 'Calisto MT';
+  font-weight: bolder;
+
+}
+
+.divAboutUsContent{
+  height:850px;
+  overflow: auto;
+
+}
+
+
+.tableContent{
+  margin-left: 50px;
+  width: 300px;
+  padding: 20px 20px;
+
+}
+
+.onPointImage{
+  cursor: pointer;
+}
+
+
+
+.AboutUsBox{
+  opacity: 0.5;
+  background-color: black;
+
+  display:inline-block;
+  width:700px;
+  height: 410px;
+  text-align: center;
+  margin-top: 40px;
+
+}
+
+
+.PicContainer{
+  position: relative;
+
+}
+
+.AboutMe{
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: 0.7;
+  overflow: hidden;
+  height: 0;
+  width: 400px;
+  transition:.7s;
+}
+
+.PicContainer:hover .AboutMe{
+  height:505px;
+}
+
+.MyText{
+  font-weight: bold;
+  font-style: italic;
+  padding: 13px;
+  text-indent: 50px;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Calisto MT';
+  color: white;
+
+}
+
+.Name{
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Calibri Light (Headings)';
+  color: white;
+}
+
+.giftsBanner{
+  height: 230px;
+  overflow: auto;
+  background-repeat:no-repeat;
+}
+
+
+.BannerText{
+  font-size: 56px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Calibri Light (Headings)';
+  color: Black;
+  margin-top: 5px;
+
+}
+
+.overlayFrame{
+  background-color: white;
+  border-radius: 40px;
+  height:770px;
+  width:600px;
+  border-style:solid;
+
+}
+
+.UsersNumbers{
+  font-family: 'Bradley Hand ITC';
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.UsersAttribute{
+  font-family: 'Eras Light ITC';
+  font-size: 30px;
+  font-weight: normal;
+
+}
+
+.UserInfo{
+  font-family: 'Eras Light ITC';
+  font-size: 15px;
+  font-weight: normal;
+
+}
+
+.userRedeemButton{
+  background-color: black;
+  color: white;
+  font-weight:bold;
+  font-size: 25px;
+  width: 300px;
+  height: 70px;
+  border: none;
+}
+
+.userRedeemButton:hover{
+  color: black;
+  background-color: white;
+  padding: 5px 5px;
+}
+
+.userCheckoutButton{
+  background-color: black;
+  color: white;
+  font-weight:bold;
+  font-size: 25px;
+  width: 200px;
+  height: 70px;
+  border: none;
+}
+
+.userCheckoutButton:hover{
+  color: black;
+  background-color: white;
+  padding: 5px 5px;
+}
+
+.greenBorder{
+    border-color: green;
+    }

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+    <script type="text/javascript">
+
+    function SignUp(){
+      document.getElementById("popContainer").style.display="block"
+      document.getElementById("bodyFlow").style="overflow:hidden;"
+      document.getElementById("SignInBtn").disabled=true;
+
+
+    }
+
+    function CloseForm(){
+
+      document.getElementById("popContainer").style.display="none"
+      document.getElementById("bodyFlow").style="overflow:auto"
+      document.getElementById("SignInBtn").disabled=false;
+      document.getElementById('SubmitNewBtn').style.display='none'
+
+    }
+
+    function SignIn(){
+      document.getElementById("SignInContainer").style.display="block"
+      document.getElementById("bodyFlow").style="overflow:hidden;"
+      document.getElementById("SignUpBtn").disabled=true;
+
+    }
+
+
+    function CloseSign(){
+
+      document.getElementById("SignInContainer").style.display="none"
+      document.getElementById("bodyFlow").style="overflow:auto"
+      document.getElementById("SignUpBtn").disabled=false;
+      document.getElementById('SubmitBtn').style.display='none'
+    }
+
+    function CheckUser(){
+      var user = document.getElementById('User');
+      var pass = document.getElementsByClassName('Pass');
+      if (user.value=="Reem" && pass.value!=""){
+        document.getElementById('SubmitBtn').style.display='block'
+      }
+      else{
+        window.alert("Wrong Username or Password");
+      }
+    }
+
+
+    function CheckNewUser(){
+      var Newuser = document.getElementById('NewUser');
+      if (Newuser.value!="Reem"){
+        document.getElementById('SubmitNewBtn').style.display='block'
+      }
+      else{
+        window.alert("User name already used");
+      }
+    }
+
+
+    function SendNewUser(){
+      var  NewUserName = document.getElementById('NewUser');
+      var statement = "Welcome, "+NewUserName.value;
+      var emptyStorage=0;
+      localStorage.setItem("UserName",emptyStorage);
+      localStorage.setItem("UserName", statement);
+      window.location.href="signIn.html"
+
+      localStorage.setItem("InitialName",NewUserName.value);
+
+
+      var emailOfUser = document.getElementById('EmailUser');
+
+      localStorage.setItem("EmailToCheck",emptyStorage);
+      localStorage.setItem("EmailToCheck", emailOfUser.value);
+
+
+      var mobileOfUser = document.getElementById('MobileUser');
+      var fullMobile = "Mobile Number: "+mobileOfUser.value;
+
+      localStorage.setItem("NumberToCheck",emptyStorage);
+      localStorage.setItem("NumberToCheck", fullMobile);
+      window.location.href="checkOut.html"
+
+
+      var addressOfUser = document.getElementById('AddressUser');
+      localStorage.setItem("AddressToCheck",emptyStorage);
+      localStorage.setItem("AddressToCheck", addressOfUser.value);
+      window.location.href= "Questions.html"
+    }
+
+
+    function SendUser(){
+      var UserName = document.getElementById('User');
+      var statement = "Welcome Back, "+UserName.value;
+      var emptyStorage=0;
+      localStorage.setItem("UserName",emptyStorage);
+      localStorage.setItem("UserName", statement);
+      window.location.href="signIn.html"
+
+      localStorage.setItem("InitialName",emptyStorage);
+      localStorage.setItem("InitialName",UserName.value);
+      window.location.href=checkOut.html;
+    }
+
+
+
+    </script>
+
+
+  <style type="text/css">
+
+  </style>
+
+</head>
+
+  <body id="bodyFlow">
+
+    <div class ="greenBorder solid" style="background-color:black; height:77px; overflow:auto">
+      <ul class="toolul removeDots">
+
+        <li class="imageli"><button id="SignInBtn" class="toolA" type="button" name="SignIn" onclick="SignIn()" style="background-color:black; display:block"><img src="Image/user.png" alt="userLogin" width=35px height=35px></button></li>
+        <li class="imageli"><button id="SignUpBtn" class="toolA" type="button" name="SignUp" onclick="SignUp()" style="background-color:black;display:block"><img src="Image/newUser.png" alt="NewUserSignUp" width=35px height=35px></button></li>
+
+      <ul class="toolul removeDots">
+
+        <li class="toolli fontfamily"><a class="toolA" href="#ContactPart">Contact Us</a></li>
+
+        <li class="toolli fontfamily"><a class="toolA" href="AboutUSPage.html">About Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="#home" style="background-color:grey">Home</a></li>
+
+      </ul></ul>
+     </div>
+
+     <div id="popContainer" class="FormContainer" align=center>
+        <p class="closeButton" onClick="CloseForm()"> x </p>
+
+       <form class="InputContainer" action="signIn.html" method="post">
+
+
+         <p class="headForm"> Create an Account</p>
+
+         <br>
+         <table align=center>
+
+            <tr>
+              <td width= 200px> <label class="SignText" >UserName</td>
+              <td> <input class="inputSignUp" type="text" name="userName" placeholder="Enter a UserName" id="NewUser" required/></label><br><br></td>
+            </tr>
+
+
+
+            <tr>
+              <td width= 200px><label class="SignText" >Password</td>
+              <td><input class="inputSignUp" type="password" name="password" placeholder="Enter a Password" required/></label><br><br></td>
+            </tr>
+
+
+         <tr>
+           <td width= 200px><label class="SignText">Date of Birth</td>
+            <td><input class="inputSignUp" type="date" name="Date of Birth" required/></label><br><br></td>
+         </tr>
+
+
+
+          <tr>
+            <td width= 200px><label class="SignText">Gender</label></td>
+              <td>  <label class="weightOption"><input type="radio" name="gender"> Male</label>
+                <label class="weightOption"><input type="radio" name="gender"> Female</label><br><br></td>
+          </tr>
+
+
+
+          <tr>
+            <td width= 200px><label class="SignText" >Email</td>
+              <td>  <input class="inputSignUp" type="email" name="email" placeholder="Enter Your Email" id="EmailUser" required/></label><br><br></td>
+          </tr>
+
+
+          <tr>
+            <td width= 200px> <label class="SignText" >Mobile</td>
+            <td> <input class="inputSignUp" type="tel" size= 13 name="telephone" placeholder="+971-05X-XXXXXXX" id="MobileUser" required/></label><br><br></td>
+          </tr>
+
+
+
+          <tr>
+            <td width= 200px><label class="SignText">Location</label></td>
+              <td>  <input class="inputSignUp" type="text" name="address" placeholder="Address" id="AddressUser" required/><br><br></td>
+          </tr>
+          <table>
+            <tr>
+              <td align=center><button type="button" name="check" class="buttonSubmit" id="checkNewBtn" onclick="CheckNewUser()">Check</button>
+                <td><button type="reset" name="Clear" class="buttonSubmit">Clear</button><br></td>
+                  <td><button id="SubmitNewBtn" type="submit" name="submit" class="buttonSubmit" style="display:none" onclick="SendNewUser()">Submit</button></td>
+              </td>
+            </tr>
+          </table>
+
+</table>
+
+       </form>
+
+
+     </div>
+
+
+     <div id="SignInContainer" class="SignCont" style="margin-left:10px;" align=center>
+
+        <p class="closeSignInButton" onClick="CloseSign()"> x </p>
+
+        <form class="SignInInput" action="signIn.html" method="post">
+
+         <p class="headForm"> Sign In </p>
+
+          <br>
+          <table>
+            <tr>
+              <td> <label class="SignText" style="text-align:left;">UserName</td>
+               <td><input class="inputSignUp" type="text" name="userName" placeholder="Enter a UserName" required id="User"></label><br><br></td>
+            </tr>
+            <tr>
+              <td><label class="SignText" style="text-align:left;" >Password</td>
+              <td><input id="Pass" class="inputSignUp" type="password" name="password" placeholder="Enter a Password" required></label><br><br></td>
+            </tr>
+
+
+          </table>
+
+          <br><br>
+          <table>
+            <tr>
+              <td>  <button type="button" name="check" class="buttonSubmit" id="checkBtn" onclick="CheckUser()">Check</button></td>
+              <td>  <button type="reset" name="Clear" class="buttonSubmit">Clear</button></td>
+              <td><button id="SubmitBtn" type="submit" name="Sign In" class="buttonSubmit" style="display:none" onclick="SendUser()">Submit</button></td>
+            </tr>
+          </table>
+
+
+
+
+
+        <br>
+
+
+
+
+       </form>
+
+     </div>
+
+    <div class="greenborder solid" style="background-image:url(Image/green.jfif);background-position: center;background-size: cover; background-repeat: no-repeat;overflow:auto; height:650px;" align=center >
+
+    <p align=center style="padding:50px 50px;"> <img  align=center src="Image/overBackground.png" alt="Logo EcoClan"  > <br>
+    <a class="aNodec" href="#EcoClanIntro"><button class="buttonLearn" type="button" name="Intro">Who we are</button></a></P>
+    <br><br><br>
+      <p align=center style="background-color:white; width:250px; border-radius:50px;" >
+          <a href="#VideoPlay" class="aNodec"><img class="tdPadding" src = "Image/PlayVideo.png" width= "45" height="40" alt="VideoLink"></a>
+          <a href="#SocialMedia" class="aNodec"> <img class="tdPadding" src = "Image/facts.png" width= "50" height="45" alt="Social Media" ></a>
+          <a href="Gifts.html"><img class="tdPadding" src = "Image/gift.png" width= "45" height="40" alt="Rewards Button"></a>
+
+          </p>
+
+
+
+    </div>
+
+
+
+    <div class=" quoteCont" align="center" style="overflow:auto; float:left ;height:400px; width:450px; overflow:auto">
+      <img src="Image/dif2.png" alt="Earth quote" width = 450px height=390px>
+      <div class = "quoteOver">
+        <strong class="quotation" style = "text-align:left">“</strong><br>
+       <span class="quote"> What you do makes a difference, and you have to decide what kind of difference you want to make</span><br>
+         <strong class="quotation" style = "text-align:right;">”</strong>
+      </div>
+    </div>
+
+    <div class=" quoteCont" align="center" style="overflow:auto; float:right ;height:400px; width:450px;overflow:auto">
+      <img src="Image/diff.jpg" alt="Earth quote" width = 450px height=390px>
+      <div class = "quoteOver">
+        <strong class="quotation" style = "text-align:left">“</strong><br>
+       <span class="quote"> There is no such thing as <strong style="color:green">‘away'</strong>. When we throw anything away it must go somewhere.</span><br>
+         <strong class="quotation" style = "text-align:right;">”</strong>
+      </div>
+    </div>
+
+    <div id="EcoClanIntro"class="ecoIntroContainer"align="center" style="overflow:auto; float:center ;height:400px; width:610px;overflow:auto">
+
+
+      <p class="ecoClanHeader">EcoClan</p>
+      <p class="ecoClanText">EcoClan is an organization that provides recycling services to reduce untreated waste produced from households.
+              We offer a range of services to develop solutions that improve recycling and waste disposal. With EcoClan all you have to do is register, we collect and you win.</p>
+
+    </div>
+
+
+
+
+
+      <div style="height:455px; width:405px;float:left;overflow:auto" >
+        <img src="Image/leaves.png" alt="Leaves" width="405px" height="450px">
+
+      </div>
+
+
+    <div style="height:455px; width:405px;float:right;overflow:auto" >
+      <img src="Image/leaves.png" alt="Leaves" width="405px" height="450px">
+
+
+    </div>
+
+    <div id="VideoPlay" align=center style="width:700px; height:455px; float:center; overflow:auto">
+
+      <video controls width="700" height="450" center='fixed'>
+      <source src="Videos/FinalIntro.mp4" type="video/mp4">
+
+
+    </div>
+
+
+
+<div style="background-color:black; height:350px; width:100%">
+
+
+  <div id="SocialMedia" style="float:left;background-color:black;height:350px;width:500px;overflow:auto;">
+
+    <table style="height:250px; margin:20px 20px">
+
+      <tr>
+        <th class="FootContact" colspan="2" style="color:white">Our Social Media</th>
+      </tr>
+
+      <tr>
+            <td  align = "center"> <img src = "Image/instagram.png" width= "50px" height="50px"> </td>
+            <td align = "center"> <img src = "Image/facebook.png" width= "50px" height="50px"> </td>
+          </tr>
+
+            <tr>
+              <td align = "center"> <img src = "Image/twitter.png" width= "50" height="50"> </td>
+              <td align = "center"> <img src = "Image/youtube.png" width= "50" height="50"> </td>
+            </tr>
+
+    </table>
+
+  </div>
+
+  <div style="float:right;background-color:black;height:350px;width:500px;overflow:auto;">
+
+    <p class="FootContact">Learn More...</p>
+
+    <ul class="footerText removeDots" style="color:white;margin-right:20px">
+                  <li>Who are we?</li>
+                  <p align= center >EcoClan is an initiative to help ease the process of recycling for people.
+                    All they have to do is divide the wastes and then contact us for pickup. </p>
+
+                    <li>Our Privacy Policy:</li>
+                    <p align=center style="color:white"> Our privacy policy contains how your data is used and how it is protected, when our services are used.</p>
+
+                </ul>
+
+  </div>
+
+  <div style="float:center;background-color:black;height:350px;width:500px;overflow:auto;" id="ContactPart">
+
+    <p class="FootContact">Contact Us</p>
+
+    <ul class="footerText removeDots" style="color:white">
+              <li> Email:<a class="aNodec" href="mailTo:EcoClan_support@gmail.com"> EcoClan_support@gmail.com </a></li>
+              <br>
+              <li >Phone Number:
+                <ul>
+                <li><a class="aNodec" href="tel:0563199274">+971-56-3199274</a></li>
+                <li><a class="aNodec" href="tel:0503266204">+971-50-3266204</a></li>
+                </ul> </li>
+                <br>
+              <li > Address:
+                <ul>
+                  <li >Abu Dhabi, Electra Street, Tourist Club, Facing AD Mall</li>
+                  <li >Abu Dhabi, Khalifa Street, Near FAB Main Branch </li>
+                  <li >Abu Dhabi, Khalidiya, Facing AlKhalidiya Garden</li>
+                </ul>
+              </li>
+
+    </ul>
+
+  </div>
+
+
+</div>
+
+
+
+  </body>
+
+</html>

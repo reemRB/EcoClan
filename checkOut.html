@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CheckOut</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript">
+
+
+    function ShowGifts(){
+      document.getElementById("GiftsContainer").style.display='block'
+
+
+      var tableLabel = document.getElementById("NbPoints").innerHTML;
+
+      if(tableLabel >=10){
+
+        for(var i=1;i<=tableLabel;i++){
+
+          if (document.getElementById(i) !=null){
+              document.getElementById(i).style.display="block";
+          }
+        }
+
+
+      }
+
+    }
+    function CloseNoSave(){
+      document.getElementById("GiftsContainer").style.display='none'
+
+
+    }
+
+    function Save(){
+
+    var GiftSelected = document.getElementsByClassName("number");
+    var points;
+    var oldPoints
+    var newPoints;
+
+    for (var i=0; i<56; i++){
+      if (GiftSelected[i].checked){
+          points = GiftSelected[i].value;
+          document.getElementById("GiftsContainer").style.display='none'
+          oldPoints = document.getElementById('NbPoints').innerHTML;
+          newPoints = oldPoints - points;
+          document.getElementById('NbPoints').innerHTML=newPoints;
+          document.getElementById('NumberGifts').innerHTML= "Yes";
+          document.getElementById("RGift").style.display='none'
+
+      }
+    }
+
+    }
+
+
+    function PopUp(){
+      var transactionWay = document.getElementById('UserAddress').innerHTML;
+      if (transactionWay.includes("Drop")){
+
+          window.alert("Thank You For Daring to Make a Change! Our Team will be waiting for you!");
+
+      }else{
+        window.alert("Thank You For Daring to Make a Change! Our Team will contact you soon for package pick-up!");
+      }
+
+      document.getElementById("trial").style.display="none"
+      document.getElementById("RGift").style.display="none"
+      document.getElementById("GiftsContainer").style.display='none'
+
+    }
+
+
+
+    function ReceiveFromQuestions(){
+
+      var MyName = localStorage.getItem("ToCheckOut");
+      document.getElementById("NameUser").innerHTML=MyName;
+
+      var uName = localStorage.getItem("InitialName");
+      document.getElementById('UserNameUsed').innerHTML=uName;
+
+      var PackageName = localStorage.getItem("PackageToCheckOut");
+      document.getElementById('UserPackage').innerHTML=PackageName;
+
+      var PackageAddress = localStorage.getItem("DPToCheck");
+      document.getElementById('UserAddress').innerHTML=PackageAddress;
+
+      var PackageDate = localStorage.getItem("DateToCheck");
+      document.getElementById('UserDate').innerHTML=PackageDate;
+
+
+    }
+
+
+    function CheckOutInfo(){
+      var ProfileName = document.getElementById('NameUser').innerHTML;
+
+      if(ProfileName.includes("Back")){
+
+        if(ProfileName.includes('Reem')){
+          document.getElementById('NbPoints').innerHTML="65"
+          document.getElementById('WeightProvided').innerHTML="65 KG"
+          document.getElementById('NumberGifts').innerHTML="No"
+          document.getElementById('EmailUser').innerHTML="reem.bostami98@outlook.com"
+          document.getElementById('UserNumber').innerHTML="056-3199275"//receive from home
+        }
+        var nbPoints = document.getElementById('NbPoints').innerHTML;
+
+        nbPoints = parseInt(nbPoints);
+
+        if (nbPoints<=10){
+          document.getElementById('ImageLevel').src='Image/One.jpg'
+        }
+        else if(nbPoints>10&&nbPoints<=20){
+          document.getElementById('ImageLevel').src='Image/two.jpg'
+        }else if (nbPoints>20 && nbPoints<=30){
+          document.getElementById('ImageLevel').src='Image/three.jpg'
+        }else if (nbPoints>30 && nbPoints<=40){
+          document.getElementById('ImageLevel').src='Image/four.jpg'
+        }else if (nbPoints>40 && nbPoints<=50){
+          document.getElementById('ImageLevel').src='Image/five.jpg'
+        }else if (nbPoints>50 && nbPoints<=60){
+          document.getElementById('ImageLevel').src='Image/six.jpg'
+        }else if (nbPoints>60 && nbPoints<=70){
+          document.getElementById('ImageLevel').src='Image/seven.jpg'
+        }else if (nbPoints>80 && nbPoints<=90){
+          document.getElementById('ImageLevel').src='Image/eight.jpg'
+        }else if (nbPoints>90 && nbPoints<=100){
+          document.getElementById('ImageLevel').src='Image/nine.jpg'
+        }else if (nbPoints>100 && nbPoints<=110){
+          document.getElementById('ImageLevel').src='Image/ten.jpg'
+        }else if (nbPoints>110 && nbPoints<=120){
+          document.getElementById('ImageLevel').src='Image/eleven.jpg'
+        }else{
+          document.getElementById('ImageLevel').src='Image/twelve.jpg'
+        }
+
+      }else{
+          document.getElementById('ImageLevel').src='Image/One.jpg'
+          document.getElementById('NbPoints').innerHTML="0"
+          document.getElementById('WeightProvided').innerHTML="0"
+          document.getElementById('NumberGifts').innerHTML="0"
+
+          var MyNumber = localStorage.getItem("NumberToCheck");
+          document.getElementById("UserNumber").innerHTML=MyNumber;
+
+          var MyEmail = localStorage.getItem("EmailToCheck");
+          document.getElementById("EmailUser").innerHTML=MyEmail;
+
+          var MyAddress = localStorage.getItem("AddressToCheck");
+          document.getElementById("UserAddress").innerHTML=MyAddress;
+
+      }
+    }
+
+
+
+
+
+
+
+    </script>
+  </head>
+  <body onload="ReceiveFromQuestions();CheckOutInfo();">
+
+    <div class ="greenBorder solid" style="background-color:black; height:50px;">
+
+      <ul class="toolul removeDots">
+          <li class="imageli fontfamily"><a id="NameUser" class="toolA" href="Profile.html" onclick="RedeemName()"> </a></li>
+
+      <ul class="toolul removeDots">
+        <li class="toolli fontfamily"><a class="toolA" href="#ContactPart">Contact Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="AboutUSPage.html" onclick="aboutName()">About Us</a></li>
+        <li class="toolli fontfamily"><a class="toolA" href="signIn.html">Home</a></li>
+      </ul>    </ul>
+
+
+     </div>
+
+
+
+         <div  class="solid divContainer" style="background-image:url(Image/backgroundframe2.jpg)" align=center>
+
+
+
+
+
+                   <div id="GiftsContainer" class="overlayFrame solid" style="float:left; overflow:auto;width:350px; margin-left:80px;margin-top:10px;border-radius:0px;display:none">
+                     <span><button style="margin-top:10px" type="button" name="button" onclick="Save()">Submit</button></span>
+                     <span style="margin-left:245px; margin-top: 15px; cursor:pointer" onclick="CloseNoSave()">X</span>
+
+
+                     <table border="1" style="display:none" id="5" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="5"><img src="Image/a2.jpg" alt="first bracelet" width=190px height=190px><br> 5 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="5"><img src="Image/a3.jpg" alt="first bracelet" width=190px height=190px><br> 5 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="5" ><img src="Image/br1-1.jpg" alt="first bracelet" width=190px height=190px><br> 5 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="5"><img src="Image/br1-4.jpg" alt="first bracelet" width=190px height=190px><br> 5 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="5"><img src="Image/br1-5.jpg" alt="first bracelet" width=190px height=190px><br> 5 points</td></tr>
+
+                     </table>
+
+                     <table border="1" id="6" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="6"><img src="Image/a6.jpg" alt="first bracelet" width=190px height=190px><br> 6 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="6"><img src="Image/a4.jpg" alt="first bracelet" width=190px height=190px><br> 6 points</td></tr>
+
+                     </table>
+
+                     <table border="1" id="7" style="display:none" width=230px>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br1-3.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr ><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br1-2.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br3.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br4.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br5.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7" ><img src="Image/br6.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7" ><img src="Image/br7.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/br8.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/a1.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/a5.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/a7.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/b3.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/b4.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="7"><img src="Image/b11.jpg" alt="first bracelet" width=190px height=190px><br> 7 points</td></tr>
+
+                     </table>
+
+                     <table border="1" id="8" style="display:none" width=230px>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="8"><img src="Image/br3-2.jpg" alt="first bracelet" width=190px height=190px> <br> 8 points</td></tr>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="8"><img src="Image/br2.jpg" alt="first bracelet" width=190px height=190px> <br> 8 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="9" style="display:none" width=230px>
+                      <tr><td style="border:solid" align=center><input type="radio" class="number" value="9"><img src="Image/b5.jpg" alt="first bracelet" width=190px height=190px><br> 9 points</td>
+
+                      </table>
+
+                      <table border="1" id="10" style="display:none" width=230px>
+                      <tr><td style="border:solid" align=center><input type="radio" class="number" value="10"><img src="Image/b1.jpg" alt="first bracelet" width=190px height=190px><br> 10 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="20" style="display:none" width=230px>
+                       <tr><td style="border:solid" align=center><input type="radio" class="number" value="20"><img src="Image/bt1-1.jpg" alt="first bracelet" width=190px height=220px><br> 20 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="25" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="25" ><img src="Image/bt1-2.jpg" alt="first bracelet" width=190px height=220px><br> 25 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="25"><img src="Image/bt1-3.jpg" alt="first bracelet" width=190px height=220px><br> 25 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="25"><img src="Image/bt1-4.jpg" alt="first bracelet" width=190px height=220px><br> 25 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="25"><img src="Image/bt2-2.jpg" alt="first bracelet" width=190px height=190px><br> 25 points</td></tr>
+                        <tr ><td style="border:solid" align=center><input type="radio" class="number"value="25" ><img src="Image/bt2-1.jpg" alt="first bracelet" width=190px height=170px><br> 25 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="65" style="display:none" width=230px>
+                      <tr><td style="border:solid" align=center><input type="radio" class="number" value="65" ><img src="Image/b12.jpg" alt="first bracelet" width=190px height=190px><br> 65 points</td></tr>
+                      <tr><td style="border:solid" align=center><input type="radio" class="number" value="65"><img src="Image/h1.jpg" alt="first bracelet" width=190px height=190px><br> 65 points</td><tr>
+                      <tr><td style="border:solid" align=center><input type="radio" class="number" value="65"><img src="Image/h2.jpg" alt="this" width=190px height=190px><br> 65 points</td><tr>
+
+                      </table>
+
+
+                      <table border="1" id="80" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="80" ><img src="Image/h3.jpg" alt="first bracelet" width=190px height=190px><br> 80 points</td><tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="80"><img src="Image/h5-1.jpg" alt="first bracelet" width=190px height=190px><br> 80 points</td><tr>
+
+                      </table>
+
+                      <table border="1" id="90" style="display:none" width=230px>
+
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="90"><img src="Image/h5-2.jpg" alt="first bracelet" width=190px height=190px><br> 90 points</td><tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="90"><img src="Image/h4.jpg" alt="first bracelet" width=190px height=190px><br> 90 points</td><tr>
+
+
+                      </table>
+
+                      <table border="1" id="100" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="100" ><img src="Image/w3.jpg" alt="first bracelet" width=190px height=190px><br> 100 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="100"><img src="Image/b2.jpg" alt="first bracelet" width=190px height=190px><br> 100 points</td></tr>
+
+
+                      </table>
+
+                      <table border="1" id="200" style="display:none" width=230px>
+                        <tr> <td style="border:solid" align=center><input type="radio" class="number" value="200" ><img src="Image/s1-1.jpg" alt="first bracelet" width=290px height=190px><br> 200 points</td></tr>
+                        <tr> <td  style="border:solid" align=center><input type="radio" class="number" value="200"><img src="Image/s1-2.jpg" alt="first bracelet" width=290px height=190px><br> 200 points</td></tr>
+                        <tr> <td style="border:solid" align=center><input type="radio" class="number" value="200"><img src="Image/s5.jpg" alt="first bracelet" width=290px height=190px><br> 200 points</td></tr>
+
+
+                      </table>
+
+                      <table border="1" id="250" style="display:none" width=230px>
+                        <tr> <td style="border:solid" align=center><input type="radio" class="number" value="250" ><img src="Image/s1-3.jpg" alt="first bracelet" width=250px height=190px><br> 250 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="250"><img src="Image/w1.jpg" alt="first bracelet" width=190px height=190px><br> 250 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="250" ><img src="Image/w2.jpg" alt="first bracelet" width=190px height=190px><br> 250 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="250" ><img src="Image/w4.jpg" alt="this" width=190px height=190px><br> 250 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="390" style="display:none" width=230px>
+                        <tr> <td style="border:solid" align=center><input type="radio" class="number" value="390"><img src="Image/s3-2.jpg" alt="first bracelet" width=320px height=190px><br> 390 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="390"><img src="Image/s4.jpg" alt="first bracelet" width=290px height=190px><br> 390 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number"value="390" ><img src="Image/s2-1.jpg" alt="first bracelet" width=240px height=190px><br> 390 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="390"><img src="Image/s6.jpg" alt="first bracelet" width=190px height=190px><br> 390 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="660" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="660"><img src="Image/b7.png" alt="first bracelet" width=190px height=190px><br> 660 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="660"><img src="Image/b8.jpeg" alt="first bracelet" width=190px height=190px><br> 660 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="660"><img src="Image/b10.jpg" alt="first bracelet" width=190px height=190px><br> 660 points</td></tr>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="660"><img src="Image/b9.jpg" alt="first bracelet" width=190px height=190px><br> 660 points</td></tr>
+
+                      </table>
+
+                      <table border="1" id="100" style="display:none" width=230px>
+                        <tr><td style="border:solid" align=center><input type="radio" class="number" value="1000"><img src="Image/b6.jpg" alt="first bracelet" width=190px height=190px><br> 1000 points</td></tr>
+
+
+                      </table>
+                   </div>
+
+
+           <div class="overlayFrame" style="background-image:url(Image/backGround3.jpg); border-radius:40px; overflow: center;margin-top:10px;">
+
+           <table  border=0 style="padding:20px 20px">
+             <tr>
+               <td align=center colspan="3" >
+                 <img src="Image/One.jpg" alt="Level" width="190px" height="190px" style="border-radius:50px;" id="ImageLevel">
+               </td>
+             </tr>
+             <tr>
+               <td align=center colspan="3" >
+                <h1 id="UserNameUsed">Reem Al Bostami</h1>
+                <span  style="line-height:10px;"><h3 class="UserInfo" id="EmailUser">Email Address: </h3></span>
+                    <h3 class="UserInfo" id="UserNumber"> Mobile:</h3> <!--should be sent from start page-->
+                   <h3 class="UserInfo" id="UserAddress"> Address (Drop-off/Pick-Up): </h3> <!--should be sent from questions-->
+                   <h3 class="UserInfo" id="UserDate"> Date and Time: </h3>
+                   <h3 class="UserInfo" id='UserPackage'> Type Of Package(s): </h3> <!--should be sent from questions-->
+
+               </td>
+             </tr>
+
+             <tr>
+
+               <th align=center width=150px style="line-height:27px; padding-top:20px;" >
+                 <img src="Image/points.png" alt="points" width=90px height=60px>
+                 <h3 class="UsersNumbers" id="NbPoints">60</h3></th>
+              <th align=center width=150px style="line-height:27px;padding-top:20px;"> <img src="Image/weights.png" alt="weights" width=60px height=60px><h3 class="UsersNumbers" id="WeightProvided">60 KG</h3></th>
+              <th align=center width=150px style="line-height:27px;padding-top:20px"> <img src="Image/gifts.png" alt="gifts" width=60px height=60px><h3 class="UsersNumbers" id="NumberGifts">3</h3></th>
+
+             </tr>
+
+
+
+           </table>
+
+
+           <button type="button" name="Redeem Gifts" class="userCheckoutButton" onclick="ShowGifts()" id="RGift">Redeem Gift </button>
+           <button type="button" name="Redeem Gifts" class="userCheckoutButton" id="trial" onclick="PopUp()">CheckOut</button>
+           <h5 align=center>Please note that, the weight, and the points, on this page don't include the Package to be provided. </h5>
+
+
+
+
+         </div>
+
+
+
+          </div>
+
+
+
+          <div style="background-color:black; height:350px; width:100%">
+
+
+            <div id="SocialMedia" style="float:left;background-color:black;height:350px;width:500px;overflow:auto;">
+
+              <table style="height:250px; margin:20px 20px">
+
+                <tr>
+                  <th class="FootContact" colspan="2" style="color:white">Our Social Media</th>
+                </tr>
+
+                <tr>
+                      <td  align = "center"> <img src = "Image/instagram.png" width= "50px" height="50px"> </td>
+                      <td align = "center"> <img src = "Image/facebook.png" width= "50px" height="50px"> </td>
+                    </tr>
+
+                      <tr>
+                        <td align = "center"> <img src = "Image/twitter.png" width= "50" height="50"> </td>
+                        <td align = "center"> <img src = "Image/youtube.png" width= "50" height="50"> </td>
+                      </tr>
+
+              </table>
+
+            </div>
+
+            <div style="float:right;background-color:black;height:350px;width:500px;overflow:auto;">
+
+              <p class="FootContact">Learn More...</p>
+
+              <ul class="footerText removeDots" style="color:white; margin-right:20px">
+                            <li>Who are we?</li>
+                            <p align= center >EcoClan is an initiative to help ease the process of recycling for people.
+                              All they have to do is divide the wastes and then contact us for pickup. </p>
+
+                              <li>Our Privacy Policy:</li>
+                              <p align=center style="color:white"> Our privacy policy contains how your data is used and how it is protected, when our services are used.</p>
+
+                          </ul>
+
+            </div>
+
+            <div style="float:center;background-color:black;height:350px;width:500px;overflow:auto;" id="ContactPart">
+
+              <p class="FootContact">Contact Us</p>
+
+              <ul class="footerText removeDots" style="color:white">
+                        <li> Email:<a class="aNodec" href="mailTo:EcoClan_support@gmail.com"> EcoClan_support@gmail.com </a></li>
+                        <br>
+                        <li >Phone Number:
+                          <ul>
+                          <li><a class="aNodec" href="tel:0563199274">+971-56-3199274</a></li>
+                          <li><a class="aNodec" href="tel:0503266204">+971-50-3266204</a></li>
+                          </ul> </li>
+                          <br>
+                        <li > Address:
+                          <ul>
+                            <li >Abu Dhabi, Electra Street, Tourist Club, Facing AD Mall</li>
+                            <li >Abu Dhabi, Khalifa Street, Near FAB Main Branch </li>
+                            <li >Abu Dhabi, Khalidiya, Facing AlKhalidiya Garden</li>
+                          </ul>
+                        </li>
+
+              </ul>
+
+            </div>
+
+
+          </div>
+
+
+
+  </body>
+</html>
